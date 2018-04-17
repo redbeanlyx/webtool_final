@@ -5,12 +5,15 @@
 <head>
     <title>Info</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
 
 <p><jsp:include page="header.jsp" /> </p>
 
-    <table>
+<div class="small_container" >
+    <img scr="https://my.northeastern.edu/image/journal/article?img_id=3763222&t=1511279654399" alt="test"/>
+    <table align="center">
         <tr>
             <td>First name:</td>
             <td>${fName}</td>
@@ -27,6 +30,8 @@
     <br>
     <a href="/info/edit/${userId.id}">Edit your info</a> <br>
     <a href="/info/edit/password">Edit your password</a>
+    </div>
+
 <p><jsp:include page="footer.jsp" /> </p>
 </body>
 </html>

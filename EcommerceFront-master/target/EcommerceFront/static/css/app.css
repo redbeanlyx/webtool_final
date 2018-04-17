@@ -33,6 +33,24 @@ body, #mainWrapper {
 body, #mainWrapper, .form-control{
 	/*font-size:12px!important;*/
 }
+.main_container{
+	margin:10px auto;
+	padding:3px;
+	text-align: center;
+	background-color:floralwhite;
+	border-radius: 15px;
+	width:75%;
+	align:center;
+}
+.small_container{
+	margin:6% auto;
+	padding:3%;
+	text-align: center;
+	background-color:floralwhite;
+	border-radius: 15px;
+	width:50%;
+	align:center;
+}
 
 #mainWrapper {
 	/*height: 720px; Without explicit px values, % in children's does not work*/

@@ -4,11 +4,12 @@
 <head>
     <title>Main</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
-    <%--<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>--%>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
 </head>
 <body>
 
-    <header style ="background-color: #d43f3a">
+    <header style ="margin:0;background-color: #d43f3a">
         <p style="position: absolute; top: 60px; right: 5%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/login"><span style="color:white" >Login</span></a> </c:if></p>
         <p style="position: absolute; top: 60px; right: 10%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/registration"><span style="color:white" >Registration</span></a> </c:if></p>
 
@@ -20,11 +21,13 @@
     </header>
 
 
-    <a href="/admin">Admin page</a><br>
-    <a href="/user">User Page</a><br></br>
-
+    <%--<a href="/admin">Admin page</a><br>--%>
+    <%--<a href="/user">User Page</a><br></br>--%>
+    <%--<div style="text-align: center; width:100%" align="center">--%>
+    <div class="main_container" >
     <h3>All products list:</h3>
-    <table border="2">
+
+        <table align="center" border="1">
         <thead>
         <tr>
             <th>Product Id</th>
@@ -50,7 +53,10 @@
         </c:forEach>
         </tbody>
     </table>
+
     <h3 style="color: #ac2925">${moreThanInStock}</h3>
+    </div>
+    <%--</div>--%>
 
     <p><jsp:include page="footer.jsp" /> </p>
 

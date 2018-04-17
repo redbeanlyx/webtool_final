@@ -4,9 +4,12 @@
 <head>
     <title>My page</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
+<div class="main_container" >
     <form:form action="${pageContext.request.contextPath}/my_page" commandName="user" method="post">
         <table>
             <tr>
@@ -32,6 +35,7 @@
         </table>
         <input type="submit" value="Edit">
     </form:form>
+</div>
 <p><jsp:include page="footer.jsp" /> </p>
 
 </body>
