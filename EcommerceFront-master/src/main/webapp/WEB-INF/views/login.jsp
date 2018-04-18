@@ -42,7 +42,7 @@
 							<input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 							<br>
 							<div class="form-actions">
-								<input type="submit"
+								<input  type="submit"
 									style ="height:50px;border-radius: 10px;background-color: #cb0728; color: white" class="btn btn-block" value="Log in">
 							</div>
 						</form>

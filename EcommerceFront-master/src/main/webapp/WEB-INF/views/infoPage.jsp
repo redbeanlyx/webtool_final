@@ -12,7 +12,11 @@
 <p><jsp:include page="header.jsp" /> </p>
 
 <div class="small_container" >
-    <img scr="https://my.northeastern.edu/image/journal/article?img_id=3763222&t=1511279654399" alt="test"/>
+    <h2>My Profile</h2>
+    <br>
+    <img width="125px" height="125px" src="/static/image/profile.jpg" alt="test"/>
+    <br>
+    <br>
     <table align="center">
         <tr>
             <td>First name:</td>

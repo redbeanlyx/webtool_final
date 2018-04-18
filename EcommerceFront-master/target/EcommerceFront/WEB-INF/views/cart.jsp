@@ -5,13 +5,14 @@
 <head>
     <title>Cart</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
 <p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
-<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
-
-    <table border="2">
+<div class="main_container" >
+    <h3>Finalize Your Order</h3>
+    <table align="center"border="2">
         <thead>
         <tr>
             <th>Order line Id</th>
@@ -47,12 +48,12 @@
 
 
     <form:form action="${pageContext.request.contextPath}/cart/finalize_order" commandName="orderLines" method="post">
-        <input type="submit" value="Finalize order">
+        <input class="red_button" type="submit" value="Finalize order">
     </form:form>
 
 
 <h3>Order History</h3>
-<table border="2">
+<table align="center" border="2">
     <thead>
     <tr>
         <th>Order Final ID</th>
@@ -70,6 +71,7 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
 <p><jsp:include page="footer.jsp" /> </p>
 
