@@ -12,6 +12,7 @@
 <p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
 
 <div class="small_container" >
+    <h2>Edit Cart</h2>
     <form:form action="${pageContext.request.contextPath}/cart/edit/{order_Line_Id}" commandName="orderLine" method="post">
         <table align="center" border="2">
             <tr>
@@ -48,6 +49,7 @@
                 <td><form:errors path="boughtQuantity"/></td>
             </tr>
         </table>
+        <br>
         <input class="red_button" type="submit" value="Edit">
     </form:form>
 </div>

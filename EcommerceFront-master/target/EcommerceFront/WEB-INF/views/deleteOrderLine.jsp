@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,6 +10,7 @@
 <body>
 <p><jsp:include page="header.jsp" /> </p>
 <div class="small_container" >
+
     <table align="center">
         <tr>
             <td>Product ID</td>
@@ -31,7 +33,7 @@
             <td>${orderLine.boughtQuantity}</td>
         </tr>
     </table>
-
+<br>
     <form:form action="${pageContext.request.contextPath}/cart/delete/${orderLine.orderLineId}" commandName="orderLine" method="post">
         <input class="red_button" type="submit" value="Delete Line">
     </form:form>
