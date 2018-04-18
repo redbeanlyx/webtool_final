@@ -5,13 +5,15 @@
 <head>
     <title>User Info</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
-<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
 
+<div class="small_container" >
+    <h2>Edit My Profile</h2>
     <form:form action="${pageContext.request.contextPath}/info/edit/${user.id}" commandName="user" method="post">
-        <table>
+        <table align="center">
             <tr>
                 <td>First name:</td>
                 <td><form:input path="firstName"/></td>
@@ -28,8 +30,11 @@
                 <td><form:errors path="login"/></td>
             </tr>
         </table>
-        <input type="submit" value="Edit">
+        <br>
+        <input class="red_button" type="submit" value="Edit">
     </form:form>
+</div>
+
 <p><jsp:include page="footer.jsp" /> </p>
 </body>
 </html>

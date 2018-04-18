@@ -4,10 +4,12 @@
 <head>
     <title>Final order lines</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
-    <table border="2">
+<div class="small_container" >
+    <table align="center" border="2">
         <thead>
         <tr>
             <th>Product Id</th>
@@ -29,6 +31,7 @@
         </c:forEach>
         </tbody>
     </table>
+</div>
 <p><jsp:include page="footer.jsp" /> </p>
 </body>
 </html>

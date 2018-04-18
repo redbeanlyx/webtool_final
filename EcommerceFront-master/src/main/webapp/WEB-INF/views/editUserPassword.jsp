@@ -5,14 +5,16 @@
 <head>
     <title>Edit user password</title>
     <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
+    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
 <p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
-<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
 
+<div class="small_container" >
+    <h2>Edit My Password</h2>
     <form:form action="${pageContext.request.contextPath}/info/edit/password" commandName="user" method="post">
-        <table>
+        <table align="center">
             <tr>
                 <td>Your current password:</td>
                 <td><form:password path="password"/></td>
@@ -34,8 +36,11 @@
             </tr>
 
         </table>
-        <input type="submit" value="Edit pass">
+        <br>
+        <input class="red_button" type="submit" value="Edit pass">
     </form:form>
+</div>
+
 <p><jsp:include page="footer.jsp" /> </p>
 </body>
 </html>
