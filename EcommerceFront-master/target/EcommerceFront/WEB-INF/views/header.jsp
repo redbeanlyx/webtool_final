@@ -15,7 +15,7 @@
     <%--<p style="position: absolute; top: 60px; right: 26%;color: white"><c:if test="${pageContext.request.userPrincipal.name != null}" > <strong>my information</strong></c:if></p>--%>
         <%--<p style="position: absolute; top: 60px; right: 5%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/login"><span style="color:white" >Login</span></a> </c:if></p>--%>
         <%--<p style="position: absolute; top: 60px; right: 10%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/registration"><span style="color:white" >Registration</span></a> </c:if></p>--%>
-
+        <p style="position: absolute; top: 45px; right: 16%;"><strong><a href="/info"><img style="border-radius: 25px" width="45px" height="45px" src="/static/image/profile.jpg" alt="test"/></a></strong></p>
         <p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
         <p style="position: absolute; top: 60px; right: 3%;color: white"><c:if test="${pageContext.request.userPrincipal.name != null}" > <strong><a href="/cart">Cart</a></strong></c:if></p>
         <a href="/main" ><img src="https://my.northeastern.edu/image/layout_set_logo?img_id=3730210&t=1523953377868" class="app-image" alt="hhhmm"></a>

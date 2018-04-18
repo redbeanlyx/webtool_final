@@ -9,8 +9,8 @@
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
-<div class="small_container" >
-
+< class="small_container" >
+<h2>Delete Order Line</h2>
     <table align="center">
         <tr>
             <td>Product ID</td>

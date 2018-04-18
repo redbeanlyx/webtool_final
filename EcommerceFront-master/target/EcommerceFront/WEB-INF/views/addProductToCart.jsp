@@ -10,9 +10,10 @@
 <body>
 <p><jsp:include page="header.jsp" /> </p>
 
-<p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
+
 <%--<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>--%>
 <div class="small_container" >
+    <h2>Add To Cart</h2>
     <form:form action="${pageContext.request.contextPath}/main/add/${productId}" modelAttribute="orderLines"  method="post">
         <table align="center">
             <tr>

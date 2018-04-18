@@ -9,7 +9,7 @@
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
-<p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
+
 
 <div class="small_container" >
     <h2>Edit My Password</h2>

@@ -31,11 +31,11 @@
         <thead>
         <tr>
             <th>Product Id</th>
-            <th>Brand</th>
-            <th>Model</th>
+            <th>Description</th>
+            <th>Picture</th>
             <th>Stock</th>
-            <th>Reserved Stock</th>
-            <th>MPN</th>
+            <th>Reserved</th>
+            <th>Price</th>
             <th>Add to cart</th>
         </tr>
         </thead>
@@ -44,7 +44,7 @@
             <tr>
                 <td>${product1.productId}</td>
                 <td>${product1.productBrand}</td>
-                <td>${product1.productModel}</td>
+                <td><img style="border-radius:5px" height="250px" width="250px" src="${product1.productModel}"></td>
                 <td>${product1.productStock}</td>
                 <td>${product1.reservedStock}</td>
                 <td>${product1.productMPN}</td>
