@@ -17,24 +17,23 @@
         <table align="center">
             <tr>
                 <td>Your current password:</td>
-                <td><form:password path="password"/></td>
-                <td><form:errors path="password"/></td>
-                <td>${passwordMessage}</td>
+                <td><form:password class="edit_input" path="password"/></td>
             </tr>
 
+            <tr><td></td><td>&nbsp;<form:errors path="password"/></td></tr>
+            <%--<tr><td>${passwordMessage}</td></tr>--%>
             <tr>
                 <td>New password:</td>
-                <td><input type="password" name="newPassword"/></td>
-                <td>${newPassMessage}</td>
+                <td><input class="edit_input" type="password" name="newPassword"/></td>
             </tr>
+            <tr><td></td><td>&nbsp;${newPassMessage}</td></tr>
 
             <tr>
                 <td>Confirm new password:</td>
-                <td><input type="password" name="confirmNewPassword"/></td>
-                <td>${confirmPassMessage}</td>
-                <td>${notEqualsPasswords}</td>
+                <td><input class="edit_input" type="password" name="confirmNewPassword"/></td>
             </tr>
-
+            <tr><td></td><td>&nbsp;${confirmPassMessage}</td></tr>
+            <tr><td></td><td>&nbsp;${notEqualsPasswords}</td></tr>
         </table>
         <br>
         <input class="red_button" type="submit" value="Edit pass">
