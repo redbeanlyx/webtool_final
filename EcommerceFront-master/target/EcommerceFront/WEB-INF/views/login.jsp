@@ -33,7 +33,7 @@
 							</c:if>
 							<div class="input-group input-sm">
 								<label class="input-group-addon" for="username"><i class="fa fa-user"></i></label>
-								<input type="text" class="form-control" id="username" name="login" placeholder="Enter Login" required>
+								<input type="text" class="form-control" id="username" name="login" placeholder="Enter your NUID" required>
 							</div>
 							<div class="input-group input-sm">
 								<label class="input-group-addon" for="password"><i class="fa fa-lock"></i></label> 

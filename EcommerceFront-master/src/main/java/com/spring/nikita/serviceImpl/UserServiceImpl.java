@@ -42,4 +42,11 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() throws SQLException {
         return userDao.getAllUsers();
     }
+
+    public boolean isAdmin(String username, String password){
+        if(userDao.isAdmin(username,password)){
+             return true;
+        }
+        return false;
+    }
 }

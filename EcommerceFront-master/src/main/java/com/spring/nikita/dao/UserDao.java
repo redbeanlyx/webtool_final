@@ -14,5 +14,6 @@ public interface UserDao {
     void editUser(User user) throws SQLException;
     void deleteUser(User user) throws SQLException;
     List<User> getAllUsers() throws SQLException;
-
+//    User getUserByNameAndPassword(String username, String password);
+boolean isAdmin(String username, String password);
 }

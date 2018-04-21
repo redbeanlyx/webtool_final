@@ -1,13 +1,18 @@
 package com.spring.nikita.daoImpl;
 
 import com.spring.nikita.dao.UserRolesDao;
+import com.spring.nikita.model.User;
 import com.spring.nikita.model.UserRoles;
+import com.spring.nikita.model.Role;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.hibernate.Criteria;
 
 import java.sql.SQLException;
+import org.hibernate.criterion.Restrictions;
 
 @Repository
 public class UserRolesDaoImpl implements UserRolesDao {
@@ -31,4 +36,7 @@ public class UserRolesDaoImpl implements UserRolesDao {
             }
         }
     }
+
+
+
 }

@@ -14,5 +14,5 @@ public interface UserService {
     void editUser(User user) throws SQLException;
     void deleteUser(User user) throws SQLException;
     List<User> getAllUsers() throws SQLException;
-
+    boolean isAdmin(String username, String password);
 }

@@ -16,7 +16,6 @@ public class RoleDaoImpl implements RoleDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-
     public Role getRoleByName(int role_id) throws SQLException {
         Session session = null;
         Role role = null;
