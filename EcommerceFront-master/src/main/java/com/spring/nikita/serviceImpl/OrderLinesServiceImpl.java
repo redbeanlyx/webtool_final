@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by nikita on 08.09.16.
- */
+
 @Service
 public class OrderLinesServiceImpl implements OrderLinesService {
 

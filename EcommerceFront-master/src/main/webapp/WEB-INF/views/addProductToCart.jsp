@@ -26,7 +26,8 @@
             </tr>
             <tr>
                 <td>Model</td>
-                <td>${product.productModel}</td>
+                <td><img height="250px" width="250px" style="border-radius: 25px" src="${product.productModel}"></td>
+
             </tr>
             <tr>
                 <td>Reserved Stock</td>

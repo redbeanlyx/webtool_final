@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
 
-/**
- * Created by FromxSoul on 30.08.2016.
- */
+
 @Service
 @Transactional
 public class RoleServiceImpl implements RoleService {

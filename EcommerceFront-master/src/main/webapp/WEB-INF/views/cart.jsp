@@ -32,7 +32,7 @@
                 <td>${line.orderLineId}</td>
                 <td>${line.product.productId}</td>
                 <td>${line.product.productBrand}</td>
-                <td>${line.product.productModel}</td>
+                <td><img height="250px" width="250px" style="border-radius:25px" src="${line.product.productModel}"></td>
                 <td>${line.product.productStock}</td>
                 <td>${line.product.productMPN}</td>
                 <td>${line.boughtQuantity}</td>

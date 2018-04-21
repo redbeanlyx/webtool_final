@@ -5,9 +5,7 @@ import com.spring.nikita.model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by FromxSoul on 28.08.2016.
- */
+
 public interface UserService {
 
     User getUserById(int id) throws SQLException;

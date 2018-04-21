@@ -10,9 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by FromxSoul on 28.08.2016.
- */
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {

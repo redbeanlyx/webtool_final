@@ -28,6 +28,7 @@ public class LogInOutController extends GetUserName {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
+
         return "login";
     }
 

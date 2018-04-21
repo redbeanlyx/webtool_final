@@ -9,7 +9,8 @@
 </head>
 <body>
 <p><jsp:include page="header.jsp" /> </p>
-< class="small_container" >
+
+<div class="small_container" >
 <h2>Delete Order Line</h2>
     <table align="center">
         <tr>
@@ -22,7 +23,7 @@
         </tr>
         <tr>
             <td>Model</td>
-            <td>${orderLine.product.productModel}</td>
+            <td><img style="border-radius:25px" height="250px" width="250px" src="${orderLine.product.productModel}"></td>
         </tr>
         <tr>
             <td>MPN</td>

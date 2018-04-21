@@ -15,6 +15,7 @@ public class Handle404Controller {
 
     @ExceptionHandler(NoHandlerFoundException.class)
     public String handle(Exception ex) {
+
         return "redirect:/404";
     }
 

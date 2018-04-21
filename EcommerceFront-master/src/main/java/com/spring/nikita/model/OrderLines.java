@@ -5,9 +5,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by nikita on 31.08.16.
- */
+
 @Entity
 @Table(name = "order_lines")
 public class OrderLines {

@@ -3,6 +3,7 @@ package com.spring.nikita.daoImpl;
 import com.spring.nikita.dao.UserDao;
 import com.spring.nikita.model.User;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -94,6 +95,9 @@ public class UserDaoImpl implements UserDao {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
+//            Query query = session.createQuery("from com.spring.nikita.model.User");
+//            List list = query.list();
+//
             session.delete(user);
             session.getTransaction().commit();
         } catch (Exception e) {

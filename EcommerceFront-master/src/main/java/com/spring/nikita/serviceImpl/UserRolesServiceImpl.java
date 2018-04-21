@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 
-/**
- * Created by nikita on 16.09.16.
- */
 @Service
 public class UserRolesServiceImpl implements UserRolesService {
 
