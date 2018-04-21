@@ -23,35 +23,32 @@
   <table>
     <tr>
       <td>First Name:</td>
-      <td><form:input style="margin: 5px ;width: 220px" class="form-control" path="firstName"/></td>
-      <td><form:errors path="firstName"/></td>
+      <td><form:input style="width: 220px" class="form-control" path="firstName"/></td>
     </tr>
+    <tr><td></td><td>&nbsp;<form:errors path="firstName"/></td></tr>
 
     <tr>
       <td>Second Name:</td>
-      <td><form:input  style="margin: 5px;width: 220px" class="form-control" path="lastName"/></td>
-      <td><form:errors path="lastName"/></td>
+      <td><form:input  style="width: 220px" class="form-control" path="lastName"/></td>
     </tr>
-
+    <tr><td></td><td>&nbsp;<form:errors path="lastName"/></td></tr>
     <tr>
       <td>NU ID:</td>
-      <td><form:input  style="margin: 5px;width: 220px" class="form-control" path="login"/></td>
-      <td><form:errors  path="login"/></td>
+      <td><form:input  style="width: 220px" class="form-control" path="login"/></td>
     </tr>
-
+    <tr><td></td><td>&nbsp;<form:errors  path="login"/></td></tr>
     <tr>
       <td>Password:</td>
-      <td><form:password style="margin: 5px;width: 220px" class="form-control" path="password"/></td>
-      <td><form:errors path="password"/></td>
+      <td><form:password style="width: 220px" class="form-control" path="password"/></td>
     </tr>
-
+    <tr><td></td><td>&nbsp;<form:errors color="red" path="password"/></td></tr>
     <tr>
       <td>Confirm password:</td>
       <td><input  style="margin: 5px;width: 220px" class="form-control" type="password" name="passwordC"/></td>
-      <td>${password2Error}</td>
-      <td>${passwordsDontEquals}</td>
-    </tr>
 
+    </tr>
+    <tr><td></td><td>${password2Error}</td></tr>
+    <tr><td></td><td>${passwordsDontEquals}</td></tr>
     </table>
   <br>
 

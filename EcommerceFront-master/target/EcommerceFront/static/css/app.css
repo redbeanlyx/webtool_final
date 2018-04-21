@@ -78,6 +78,12 @@ input{
 	-ms-transition:all .2s
 }
 
+.edit_input{
+	/*margin:5px;*/
+	height:40px;
+	width:200px
+}
+
 /*input:-moz-placeholder{color:#fff}*/
 /*input:-ms-input-placeholder{color:#fff}*/
 /*input::-webkit-input-placeholder{color:#fff}*/

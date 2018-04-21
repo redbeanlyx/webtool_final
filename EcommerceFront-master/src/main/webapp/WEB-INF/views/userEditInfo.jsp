@@ -16,19 +16,22 @@
         <table align="center">
             <tr>
                 <td>First name:</td>
-                <td><form:input path="firstName"/></td>
-                <td><form:errors path="firstName"/></td>
+                <td>&nbsp;<form:input class="edit_input" path="firstName"/></td>
+
             </tr>
+            <tr><td></td><td>&nbsp;<form:errors path="firstName"/></td></tr>
             <tr>
                 <td>Last name:</td>
-                <td><form:input path="lastName"/></td>
-                <td><form:errors path="lastName"/></td>
+                <td>&nbsp;<form:input class="edit_input" path="lastName"/></td>
+
             </tr>
+            <tr><td></td><td>&nbsp;<form:errors path="lastName"/></td></tr>
             <tr>
-                <td>Login:</td>
-                <td><form:input path="login"/></td>
-                <td><form:errors path="login"/></td>
+                <td>NU ID:</td>
+                <td>&nbsp;<form:input class="edit_input" path="login"/></td>
+
             </tr>
+            <tr><td></td><td>&nbsp;<form:errors path="login"/></td></tr>
         </table>
         <br>
         <input class="red_button" type="submit" value="Edit">
