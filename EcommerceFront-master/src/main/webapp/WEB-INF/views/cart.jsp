@@ -45,7 +45,9 @@
     <h3 style="color: #ac2925">${moreThanStock}</h3>
     <h3 style="color: #ac2925">${nullValue}</h3>
 
-
+    total price: <p id="total" >${total}</p>
+<input type="text" id="promotion" /><input type="submit" value="submit" onclick="discount()" >
+    <p style="color:indianred" id="wrong"></p>
 
     <form:form action="${pageContext.request.contextPath}/cart/finalize_order" commandName="orderLines" method="post">
         <input class="red_button" type="submit" value="Finalize order">
@@ -74,6 +76,24 @@
 </div>
 
 <p><jsp:include page="footer.jsp" /> </p>
+<script>
+
+    function discount()
+    {
+        alert("hehe");
+        var promotion=  document.getElementById("promotion").value;
+        alert("pro"+promotion);
+        alert("final"+document.getElementById("total").innerHTML);
+        if(promotion=="123"){
+            document.getElementById("total").innerHTML = Number(document.getElementById("total").innerHTML) * 0.8;
+            document.getElementById("promotion").setAttribute("readonly","readonly");
+        }else{
+            document.getElementById("wrong").innerHTML="wrong promotion code";
+        }
+
+    }
+
+</script>
 
 </body>
 </html>

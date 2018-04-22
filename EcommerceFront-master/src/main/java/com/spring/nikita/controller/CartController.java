@@ -39,6 +39,13 @@ public class CartController extends GetUserName {
 
         model.addAttribute("allLines", orderLinesService.getNotApprovedLineByUserId(user.getId()));
         model.addAttribute("orderHistory", orderLinesService.getAllUserLineByRequiredUser(user));
+        double sum =0;
+        for(OrderLines line: orderLinesService.getNotApprovedLineByUserId(user.getId())){
+            Product product = line.getProduct();
+            double price = product.getProductMPN()*line.getBoughtQuantity();
+            sum += price;
+        }
+        model.addAttribute("total",sum);
         return "cart";
     }
 
@@ -214,34 +221,14 @@ System.out.println("empty?"+request.getParameter("productid"));
 System.out.print("integer?"+id);
         productService.addComment(userName,content,id);
 
-//        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
+
         product = productService.getProduct(id);
         model.addAttribute("product", product);
         model.addAttribute("comments",product.getComments());
 
         return "addProductToCart";
     }
-//    @RequestMapping(value = "/comment/{productId}*", method = RequestMethod.GET)
-//    public String addNewCommentToProduct( @ModelAttribute OrderLines orderLines,
-//                                           @ModelAttribute Product product,@PathVariable("productId") int id,@RequestParam("newcomment") String content,
-//                                         Model model, HttpServletRequest request) throws SQLException {
-//  String userName=null;
-//        if(request.getParameter("anonymous")!=null&&request.getParameter("anonymous").equals("yes")){
-//              userName="***";
-//        }else{
-//            userName = super.getUserName();
-//        }
-//
-//        System.out.println("test10");
-//        productService.addComment(userName,content,id);
-//
-////        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
-//        product = productService.getProduct(id);
-//        model.addAttribute("product", product);
-//        model.addAttribute("comments",product.getComments());
-//
-//        return "addProductToCart";
-//    }
+
 
     @RequestMapping(value = "/cart/delete/{orderLineId}", method = RequestMethod.POST)
     public String deleteOrderLinePost(@ModelAttribute OrderLines orderLines,
