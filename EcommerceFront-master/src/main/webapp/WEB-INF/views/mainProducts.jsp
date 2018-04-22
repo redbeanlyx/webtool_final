@@ -26,12 +26,35 @@
     <%--<div style="text-align: center; width:100%" align="center">--%>
     <div class="main_container" style="padding-bottom: 50px" >
         <h2>Northeastern University Second Hand Market</h2>
-        <h3>All products list:</h3>
-        <div><form action="/search" method="get">
-            <input style="height:30px;margin:12px" type="text" name="search"  />
+
+        <div style="height:70px">
+        <div style="display:inline-block;width:300px"><form action="/search" method="get">
+            <input style="height:30px;margin:12px" type="text" name="search" value="${input}" />
             <input style="height:30px;background-color: #d43f3a" type="submit" value="search">
             </form>
         </div>
+            <div style="float:right;display:inline-block;width:200px;color:white" class="A">
+                <div class="B" >
+                    <ul>
+                        <li id='li1'><span style="color:white">Order By</span>
+                            <div id="C" class="D">
+                                <a href="/orderbyid">ID</a>
+                                <a href="/orderbyprice">Price</a>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            <%--<from action="/order" method="get">--%>
+            <%--<input style="height:30px;background-color: #d43f3a" type="submit" value="order">--%>
+            <%--</from>--%>
+
+        <div style="clear:both"></div>
+
         <%--<table align="center" border="1">--%>
         <%--<thead>--%>
         <%--<tr>--%>

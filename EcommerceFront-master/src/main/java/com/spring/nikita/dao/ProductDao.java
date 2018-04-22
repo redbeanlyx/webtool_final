@@ -12,6 +12,8 @@ public interface ProductDao {
     void editProduct(Product product) throws SQLException;
     Product getProduct(int productId) throws SQLException;
     List<Product> getAllProducts() throws SQLException;
-    public List<Product> searchProductByUserInput(String input);
+    List<Product> searchProductByUserInput(String input);
+    List<Product> searchAndOrderById(String input);
+    List<Product> searchAndOrderByPrice(String input);
 
 }

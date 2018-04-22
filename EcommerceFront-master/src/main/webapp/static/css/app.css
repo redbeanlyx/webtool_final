@@ -52,9 +52,31 @@ body, #mainWrapper, .form-control{
 	align:center;
 }
 
+li{
+	width: 100px;
+	/*height: 22px;*/
+	background: #d43f3a;
+	text-align: center;
+	border-radius: 12px;
+}
 
+.B li{
+	float: left;
+}
 
-input{
+#C{clear: both;}
+
+#C a{
+	color: white;
+	/*padding: 8px;*/
+	display: none;
+}
+
+#li1:hover a{
+	display: block;
+}
+
+input,textarea{
 	/*line-height:42px;*/
 	/*margin-top:25px;*/
 	/*padding:0 15px;*/
@@ -88,13 +110,17 @@ input{
 /*input:-ms-input-placeholder{color:#fff}*/
 /*input::-webkit-input-placeholder{color:#fff}*/
 
-/*input:focus{*/
-	/*border:0 solid #DC143C;*/
-	/*outline:0;*/
-	/*-moz-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2);*/
-	/*-webkit-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2);*/
-	/*box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2)*/
-/*}*/
+input:focus{
+	border:0 solid #DC143C;
+	outline:0;
+	-moz-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2);
+	-webkit-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2);
+	box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2)
+}
+
+textare{
+
+}
 
 .red_button{
 	cursor:pointer;

@@ -41,4 +41,11 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> searchProductByInput(String input){
         return productDao.searchProductByUserInput(input);
     }
+
+    public List<Product> searchAndOrderById(String input){
+        return productDao.searchAndOrderById(input);
+    }
+    public List<Product> searchAndOrderByPrice(String input){
+        return productDao.searchAndOrderByPrice(input);
+    }
 }

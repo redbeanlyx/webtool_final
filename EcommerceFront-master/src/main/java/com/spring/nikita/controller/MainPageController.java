@@ -1,6 +1,7 @@
 package com.spring.nikita.controller;
 
 import com.spring.nikita.model.User;
+import com.spring.nikita.model.Product;
 import com.spring.nikita.service.ProductService;
 import com.spring.nikita.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 
 
@@ -44,13 +47,51 @@ public class MainPageController extends GetUserName {
         return "mainProducts";
     }
 
-    @RequestMapping(value="/search", method =RequestMethod.GET)
-    public String searchProduct(@RequestParam("search") String input, Model model){
-        model.addAttribute("allProducts", productService.searchProductByInput(input));
+    @RequestMapping(value={"/search"}, method =RequestMethod.GET)
+    public String searchProduct(@RequestParam("search") String input, Model model, HttpServletRequest request){
 
+       HttpSession session = request.getSession();
+       session.setAttribute("search",input);
+       model.addAttribute("allProducts", productService.searchProductByInput(input));
+       model.addAttribute("input",input);
         return "mainProducts";
     }
 
+    @RequestMapping(value="/orderbyid", method =RequestMethod.GET)
+    public String orderProductsById( Model model,HttpServletRequest request) throws SQLException {
+
+
+        HttpSession session = request.getSession();
+        String search = (String)session.getAttribute("search");
+
+
+        if(search==null){
+            model.addAttribute("allProducts", productService.searchAndOrderById(""));
+
+       }else{
+            model.addAttribute("allProducts", productService.searchAndOrderById(search));
+        }
+        model.addAttribute("input",search);
+        return "mainProducts";
+    }
+
+    @RequestMapping(value="/orderbyprice", method =RequestMethod.GET)
+    public String orderProductsByPrice( Model model,HttpServletRequest request) throws SQLException {
+
+
+        HttpSession session = request.getSession();
+        String search = (String)session.getAttribute("search");
+
+
+        if(search==null){
+            model.addAttribute("allProducts", productService.searchAndOrderByPrice(""));
+        }else{
+            model.addAttribute("allProducts", productService.searchAndOrderByPrice(search));
+        }
+        model.addAttribute("input",search);
+
+        return "mainProducts";
+    }
 
 //
 //    @RequestMapping(value = "/main/add", method = RequestMethod.GET)

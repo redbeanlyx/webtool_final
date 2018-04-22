@@ -106,6 +106,7 @@ public class CartController extends GetUserName {
 
         product = productService.getProduct(productId);
         model.addAttribute("product", product);
+        model.addAttribute("comments",product.getComments());
         return "addProductToCart";
     }
 
