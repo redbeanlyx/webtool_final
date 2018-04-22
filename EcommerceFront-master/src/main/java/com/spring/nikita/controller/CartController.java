@@ -14,6 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
 
@@ -103,7 +104,7 @@ public class CartController extends GetUserName {
     @RequestMapping(value = "/main/add/{productId}", method = RequestMethod.GET)
     public String getCartPage(@PathVariable("productId") int productId, @ModelAttribute OrderLines orderLines,
                               @ModelAttribute Product product, Model model) throws SQLException {
-
+        model.addAttribute("userName", super.getUserName());
         product = productService.getProduct(productId);
         model.addAttribute("product", product);
         model.addAttribute("comments",product.getComments());
@@ -198,7 +199,49 @@ public class CartController extends GetUserName {
         return "deleteOrderLine";
     }
 
+    @RequestMapping(value = "/comment", method = RequestMethod.GET)
+    public String addNewCommentToProduct(@ModelAttribute OrderLines orderLines,
+                                          @ModelAttribute Product product,@RequestParam("newcomment") String content,
+                                         Model model, HttpServletRequest request ) throws SQLException {
+        String userName=null;
+        if(request.getParameter("anonymous")!=null&&request.getParameter("anonymous").equals("yes")){
+            userName="***";
+        }else{
+            userName = super.getUserName();
+        }
+System.out.println("empty?"+request.getParameter("productid"));
+       int id = Integer.parseInt(request.getParameter("productid"));
+System.out.print("integer?"+id);
+        productService.addComment(userName,content,id);
 
+//        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
+        product = productService.getProduct(id);
+        model.addAttribute("product", product);
+        model.addAttribute("comments",product.getComments());
+
+        return "addProductToCart";
+    }
+//    @RequestMapping(value = "/comment/{productId}*", method = RequestMethod.GET)
+//    public String addNewCommentToProduct( @ModelAttribute OrderLines orderLines,
+//                                           @ModelAttribute Product product,@PathVariable("productId") int id,@RequestParam("newcomment") String content,
+//                                         Model model, HttpServletRequest request) throws SQLException {
+//  String userName=null;
+//        if(request.getParameter("anonymous")!=null&&request.getParameter("anonymous").equals("yes")){
+//              userName="***";
+//        }else{
+//            userName = super.getUserName();
+//        }
+//
+//        System.out.println("test10");
+//        productService.addComment(userName,content,id);
+//
+////        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
+//        product = productService.getProduct(id);
+//        model.addAttribute("product", product);
+//        model.addAttribute("comments",product.getComments());
+//
+//        return "addProductToCart";
+//    }
 
     @RequestMapping(value = "/cart/delete/{orderLineId}", method = RequestMethod.POST)
     public String deleteOrderLinePost(@ModelAttribute OrderLines orderLines,

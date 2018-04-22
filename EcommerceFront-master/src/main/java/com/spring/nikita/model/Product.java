@@ -42,9 +42,6 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<OrderLines> orderLines = new ArrayList<OrderLines>();
 
-//    @ElementCollection
-//    @CollectionTable(name="comments", joinColumns=@JoinColumn(name="product_id"))
-//    @Column(name="comment")
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Comment> comments = new ArrayList<>();
 
@@ -115,4 +112,5 @@ public class Product {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
 }

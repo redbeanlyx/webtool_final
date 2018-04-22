@@ -48,4 +48,8 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> searchAndOrderByPrice(String input){
         return productDao.searchAndOrderByPrice(input);
     }
+    public void addComment(String userName, String content, int productId){
+         productDao.addComment(userName,content,productId);
+    }
+
 }

@@ -16,7 +16,7 @@
     <h2>Add To Cart</h2>
     <br>
     <br>
-    <form:form action="${pageContext.request.contextPath}/main/add/${productId}" modelAttribute="orderLines"  method="post">
+    <form:form action="${pageContext.request.contextPath}/main/add/${product.productId}" modelAttribute="orderLines"  method="post">
            <table align="center" style="padding:10px;text-align: center">
             <%--<tr>--%>
                 <%--<td>Product ID</td>--%>
@@ -54,19 +54,24 @@
     </form:form>
     <br>
     <br>
+    <div >
 <%--<c:if test="">--%>
-    <form style="align:center;" action=""  method="">
-        <textarea type="text" style="width:480px;height:70px"></textarea>
-        <input>
+    <form style="align:center;" action="/comment"  method="get">
+        <textarea type="text" style="width:480px;height:70px" name="newcomment"></textarea>
+        <br>
+        anonymous:${userName}<input type="checkbox" name="anonymous" value="yes">
+        <input type="submit" value="submit">
+        <input type="hidden" name ="productid" value="${product.productId}">
     </form>
 <%--</c:if>--%>
 
     <c:forEach items="${comments}" var="comment">
-        <p> username:${comment.username}</p>
+        <p align="left"> username:${comment.username}</p>
         <textarea style="width:480px;height:70px">
         ${comment.content}
         </textarea>
     </c:forEach>
+    </div>
 </div>
 <p><jsp:include page="footer.jsp" /> </p>
 </body>

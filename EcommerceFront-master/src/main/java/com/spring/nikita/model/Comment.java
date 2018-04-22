@@ -7,7 +7,7 @@ public class Comment {
     @Id
     @Column(name = "comment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int commentId;
+    private long commentId;
     @Column(name = "username")
     private String username;
     @Column(name = "content")
@@ -32,11 +32,21 @@ public class Comment {
         this.content = content;
     }
 
-    public int getCommentId() {
+
+    public long getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(long commentId) {
         this.commentId = commentId;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
 }
