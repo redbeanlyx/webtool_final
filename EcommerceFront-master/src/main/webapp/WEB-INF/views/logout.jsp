@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/logout" method="post" cssStyle="position: absolute; top: 46px; right: 8%">
+    <form:form action="${pageContext.request.contextPath}/logout" method="post" cssStyle="position: absolute; top: 58px; right: 8%">
         <input type="submit" value="Logout" />
     </form:form>
 </body>

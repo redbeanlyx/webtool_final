@@ -4,6 +4,7 @@ import com.spring.nikita.dao.ProductDao;
 import com.spring.nikita.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -66,6 +67,22 @@ public class ProductDaoImpl implements ProductDao {
         }
     }
 
+    public List<Product> searchProductByUserInput(String input){
+        List<Product> products = null;
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            products = session.createCriteria(Product.class).add(Restrictions.ilike("productBrand","%"+input+"%")).list();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+        return products;
+    }
 
     public Product getProduct(int productId) throws SQLException {
         Session session = null;

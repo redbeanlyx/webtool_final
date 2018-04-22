@@ -24,35 +24,51 @@
     <%--<a href="/admin">Admin page</a><br>--%>
     <%--<a href="/user">User Page</a><br></br>--%>
     <%--<div style="text-align: center; width:100%" align="center">--%>
-    <div class="main_container" >
-    <h3>All products list:</h3>
-
-        <table align="center" border="1">
-        <thead>
-        <tr>
-            <th>Product Id</th>
-            <th>Description</th>
-            <th>Picture</th>
-            <th>Stock</th>
-            <th>Reserved</th>
-            <th>Price</th>
-            <th>Add to cart</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="main_container" style="padding-bottom: 50px" >
+        <h2>Northeastern University Second Hand Market</h2>
+        <h3>All products list:</h3>
+        <div><form action="/search" method="get">
+            <input style="height:30px;margin:12px" type="text" name="search"  />
+            <input style="height:30px;background-color: #d43f3a" type="submit" value="search">
+            </form>
+        </div>
+        <%--<table align="center" border="1">--%>
+        <%--<thead>--%>
+        <%--<tr>--%>
+            <%--<th>Product Id</th>--%>
+            <%--<th>Description</th>--%>
+            <%--<th>Picture</th>--%>
+            <%--<th>Stock</th>--%>
+            <%--<th>Reserved</th>--%>
+            <%--<th>Price</th>--%>
+            <%--<th>Add to cart</th>--%>
+        <%--</tr>--%>
+        <%--</thead>--%>
+        <%--<tbody>--%>
         <c:forEach items="${allProducts}" var="product1">
-            <tr>
-                <td>${product1.productId}</td>
-                <td>${product1.productBrand}</td>
-                <td><img height="250px" width="250px" style="border-radius:25px" src="${product1.productModel}"></td>
-                <td>${product1.productStock}</td>
-                <td>${product1.reservedStock}</td>
-                <td>${product1.productMPN}</td>
-                <td><a href="/main/add/${product1.productId}">Add to cart</a></td>
-            </tr>
+
+            <div style="display:inline-block;width:30%;margin:10px">
+                <a href="/main/add/${product1.productId}"><img height="280px" width="280px" style="border-radius:25px" src="${product1.productModel}">
+                </a>
+                <br>
+                <br>
+                <div style="padding:20px">
+                    <p>&nbsp;&nbsp;genre: ${product1.productBrand} </p>
+                    <p>&nbsp;&nbsp;price: ${product1.productMPN}</p></div>
+               <%--<a href="/main/add/${product1.productId}">view details</a>--%>
+            </div>
+            <%--<tr>--%>
+                <%--<td>${product1.productId}</td>--%>
+                <%--<td>${product1.productBrand}</td>--%>
+                <%--<td><img height="250px" width="250px" style="border-radius:25px" src="${product1.productModel}"></td>--%>
+                <%--<td>${product1.productStock}</td>--%>
+                <%--<td>${product1.reservedStock}</td>--%>
+                <%--<td>${product1.productMPN}</td>--%>
+
+            <%--</tr>--%>
         </c:forEach>
-        </tbody>
-    </table>
+        <%--</tbody>--%>
+    <%--</table>--%>
 
     <h3 style="color: #ac2925">${moreThanInStock}</h3>
     </div>

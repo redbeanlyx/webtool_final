@@ -37,4 +37,8 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAllProducts() throws SQLException {
         return productDao.getAllProducts();
     }
+
+    public List<Product> searchProductByInput(String input){
+        return productDao.searchProductByUserInput(input);
+    }
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
 
@@ -25,8 +26,10 @@ public class MainPageController extends GetUserName {
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String allProducts(Model model) throws SQLException {
+
+
         model.addAttribute("allProducts", productService.getAllProducts());
-        model.addAttribute("greeting", "Shalom");
+
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             model.addAttribute("userName", super.getUserName());
@@ -38,6 +41,13 @@ public class MainPageController extends GetUserName {
 
             model.addAttribute("allUsers", userService.getAllUsers());
         }
+        return "mainProducts";
+    }
+
+    @RequestMapping(value="/search", method =RequestMethod.GET)
+    public String searchProduct(@RequestParam("search") String input, Model model){
+        model.addAttribute("allProducts", productService.searchProductByInput(input));
+
         return "mainProducts";
     }
 

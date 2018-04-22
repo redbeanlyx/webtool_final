@@ -15,5 +15,5 @@ public interface ProductService {
     void editProduct(Product product) throws SQLException;
     Product getProduct(int productId) throws SQLException;
     List<Product> getAllProducts() throws SQLException;
-
+    List<Product> searchProductByInput(String input);
 }
