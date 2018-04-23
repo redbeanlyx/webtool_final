@@ -56,13 +56,13 @@
     </form:form>
     <br>
     <br>
-    <div >
+    <div style="margin:0 auto;width:500px;text-align:left">
 <%--<c:if test="">--%>
     <form style="align:center;" action="/comment"  method="get">
         1<input type="radio" name="star" value="1" >2<input type="radio" name="star" value="2">
         3<input type="radio" name="star" value="3">4<input type="radio" name="star" value="4">5<input type="radio" name="star" value="5">
         <br>
-        <textarea type="text" style="width:480px;height:70px" name="newcomment"></textarea>
+        <textarea type="text" style="width:500px;height:70px" name="newcomment"></textarea>
         <br>
         anonymous:<input type="checkbox" name="anonymous" value="yes">
         <input type="submit" value="submit">
@@ -71,13 +71,14 @@
 <%--</c:if>--%>
 
     <c:forEach items="${comments}" var="comment">
-        <c:forEach begin="1" end="${comment.star}">
-            <img src="/static/image/star.png" alt="test" width="24px" height="24px">
-        </c:forEach>
-        <p > username:${comment.username}</p>
-        <textarea style="width:480px;height:70px">
+
+        username:${comment.username} <c:forEach begin="1" end="${comment.star}">
+        <img src="/static/image/star.png" alt="test" width="24px" height="24px">
+    </c:forEach><br>
+        <textarea readonly="readonly" style="color:dimgray;width:500px;height:70px">
         ${comment.content}
         </textarea>
+        <br>
     </c:forEach>
     </div>
 </div>

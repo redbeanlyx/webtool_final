@@ -12,7 +12,7 @@
 
 <div class="main_container" >
     <h3>Finalize Your Order</h3>
-    <table align="center"border="2">
+    <table align="center"border="0">
         <thead>
         <tr>
             <th>Order line Id</th>
