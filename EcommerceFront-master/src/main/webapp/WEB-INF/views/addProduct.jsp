@@ -12,7 +12,7 @@
 <p><jsp:include page="header.jsp" /> </p>
 <div class="small_container">
 <form:form action="${pageContext.request.contextPath}/main/add" modelAttribute="product" method="post">
-    <h2>Add New Product</h2>
+    <h2>Add New Product >></h2>
     <table align="center">
             <tr>
                 <td>Product category:</td>
@@ -38,6 +38,29 @@
         <br>
         <input class="red_button" type="submit" value="Add" />
     </form:form>
+<br><br>
+
+    <h2>Manage Users >></h2>
+    <table style="width:600px" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>NU ID</th>
+        <th>disable</th>
+    </tr>
+
+    <c:forEach items="${users}" var="user">
+        <tr>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.login}</td>
+            <td><a href="/admin/delete/${user.id}">disable</a></td>
+        </tr>
+    </c:forEach>
+    </table>
+    <br>
+    <br>
+    <br>
 </div>
 <p><jsp:include page="footer.jsp" /></p>
 </body>

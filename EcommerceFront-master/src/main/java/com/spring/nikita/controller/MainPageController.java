@@ -10,14 +10,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller()
 public class MainPageController extends GetUserName {
@@ -102,13 +99,24 @@ public class MainPageController extends GetUserName {
 
 
     @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
-    public String addProductGet(@RequestParam("login") String login, @RequestParam("password") String pass,@ModelAttribute Product product) {
+    public String addProductGet(@RequestParam("login") String login, @RequestParam("password") String pass,@ModelAttribute Product product,Model model) throws SQLException {
 
         if(userService.isAdmin(login, pass)){
+
+            model.addAttribute("users",userService.getAllUsers());
             return "addProduct";
         }
         return "adminLogin";
     }
+    @RequestMapping(value="/admin/delete/{id}",method=RequestMethod.GET)
+    public String disableUser(@PathVariable("id") int id,@ModelAttribute Product product,Model model) throws SQLException {
+
+        User user = userService.getUserById(id);
+        userService.deleteUser(user);
+        model.addAttribute("users",userService.getAllUsers());
+        return "addProduct";
+    }
+
 //
 //
 //

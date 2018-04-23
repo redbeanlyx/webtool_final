@@ -67,7 +67,7 @@
         <br>
             <div id="showmanystars"></div>
         <textarea type="text" style="width:500px;height:70px" name="newcomment"></textarea>
-        <br>
+        <br><br>
         anonymous:<input type="checkbox" name="anonymous" value="yes">
         <input type="submit" style="border-color: indianred;color: indianred" value="submit">
         <input type="hidden" name ="productid" value="${product.productId}">
