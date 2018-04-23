@@ -27,7 +27,7 @@
             <td>${lName}</td>
         </tr>
         <tr>
-            <td>Login:</td>
+            <td>NU ID:</td>
             <td>${login}</td>
         </tr>
     </table>

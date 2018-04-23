@@ -72,7 +72,7 @@
 
     <c:forEach items="${comments}" var="comment">
         <c:forEach begin="1" end="${comment.star}">
-            <img src="/static/image/star.png" alt="test" width="25px" height="25px">
+            <img src="/static/image/star.png" alt="test" width="24px" height="24px">
         </c:forEach>
         <p > username:${comment.username}</p>
         <textarea style="width:480px;height:70px">

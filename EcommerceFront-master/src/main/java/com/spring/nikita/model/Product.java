@@ -32,7 +32,7 @@ public class Product {
     private int productStock;
 
     //@NotNull(message = "Please, enter mpn")
-    @Column(name = "product_mpn", unique = true)
+    @Column(name = "product_mpn")
     private int productMPN;
 
     //@NotNull

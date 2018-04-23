@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/user/**").access("hasRole('USER')")
 //	  	.antMatchers("/admin/**").access("hasRole('ADMIN')")
 //		.antMatchers("/main/add").access("hasRole('ADMIN')")
-		.antMatchers("/main/add").access("hasRole('USER')")
+		.antMatchers("/main/add").permitAll()
 //		.antMatchers("/my_page").access("hasRole('ADMIN')")
 		.antMatchers("/my_page").access("hasRole('USER')")
 //		.antMatchers("/info/**").access("hasRole('ADMIN')")

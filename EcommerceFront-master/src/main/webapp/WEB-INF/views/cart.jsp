@@ -80,10 +80,9 @@
 
     function discount()
     {
-        alert("hehe");
+
         var promotion=  document.getElementById("promotion").value;
-        alert("pro"+promotion);
-        alert("final"+document.getElementById("total").innerHTML);
+
         if(promotion=="123"){
             document.getElementById("total").innerHTML = Number(document.getElementById("total").innerHTML) * 0.8;
             document.getElementById("promotion").setAttribute("readonly","readonly");

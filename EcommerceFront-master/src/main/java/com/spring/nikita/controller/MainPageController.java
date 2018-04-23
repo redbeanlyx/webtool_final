@@ -9,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller()
 public class MainPageController extends GetUserName {
@@ -45,6 +46,12 @@ public class MainPageController extends GetUserName {
             model.addAttribute("allUsers", userService.getAllUsers());
         }
         return "mainProducts";
+    }
+
+    @RequestMapping(value = "/admin/login", method = RequestMethod.GET)
+    public String addProduct(Model model) throws SQLException {
+
+        return "adminLogin";
     }
 
     @RequestMapping(value={"/search"}, method =RequestMethod.GET)
@@ -93,22 +100,22 @@ public class MainPageController extends GetUserName {
         return "mainProducts";
     }
 
+
+    @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
+    public String addProductGet(@ModelAttribute Product product) {
+        return "addProduct";
+    }
 //
-//    @RequestMapping(value = "/main/add", method = RequestMethod.GET)
-//    public String addProductGet(@ModelAttribute Product product) {
-//        return "addProduct";
-//    }
 //
 //
-//
-//    @RequestMapping(value = "/main/add", method = RequestMethod.POST)
-//    public String addProduct(@ModelAttribute Product product, BindingResult result) throws SQLException {
-//        if (result.hasErrors()) {
-//            return "addProduct";
-//        }
-//        productService.addProduct(product);
-//        return "redirect:/main";
-//    }
+    @RequestMapping(value = "/main/add", method = RequestMethod.POST)
+    public String addProduct(@ModelAttribute Product product, BindingResult result) throws SQLException {
+        if (result.hasErrors()) {
+            return "addProduct";
+        }
+        productService.addProduct(product);
+        return "redirect:/main";
+    }
 
 
 }

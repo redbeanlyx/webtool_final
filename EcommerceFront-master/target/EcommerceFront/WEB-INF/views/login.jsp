@@ -39,7 +39,7 @@
 								<label class="input-group-addon" for="password"><i class="fa fa-lock"></i></label> 
 								<input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
 							</div>
-							<input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
+							<input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" /><br><a href="/admin/login">administrator</a>
 							<br>
 							<div class="form-actions">
 								<input  type="submit"
