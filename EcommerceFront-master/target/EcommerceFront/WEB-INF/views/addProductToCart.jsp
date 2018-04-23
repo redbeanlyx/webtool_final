@@ -27,7 +27,9 @@
 
                 <td colspan="2"><img height="250px" width="250px" style="margin:20px;border-radius: 25px" src="${product.productModel}"></td>
                 <td rowspan="4">
-                    &nbsp;&nbsp;quantity:<form:input type="number" style="width:50px" path="boughtQuantity"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    quantity:<form:input type="number" style="width:50px" path="boughtQuantity"/>
                     <br>
                     <form:errors path="boughtQuantity"/><br>
 
@@ -40,7 +42,7 @@
                     <td>&nbsp;&nbsp;${product.productBrand}</td>
                 </tr>
             <tr>
-                <td>Reserved Stock:</td>
+                <td>Reserved:</td>
                 <td>&nbsp;&nbsp;${product.reservedStock}</td>
             </tr>
             <tr>
@@ -57,16 +59,22 @@
     <div >
 <%--<c:if test="">--%>
     <form style="align:center;" action="/comment"  method="get">
+        1<input type="radio" name="star" value="1" >2<input type="radio" name="star" value="2">
+        3<input type="radio" name="star" value="3">4<input type="radio" name="star" value="4">5<input type="radio" name="star" value="5">
+        <br>
         <textarea type="text" style="width:480px;height:70px" name="newcomment"></textarea>
         <br>
-        anonymous:${userName}<input type="checkbox" name="anonymous" value="yes">
+        anonymous:<input type="checkbox" name="anonymous" value="yes">
         <input type="submit" value="submit">
         <input type="hidden" name ="productid" value="${product.productId}">
     </form>
 <%--</c:if>--%>
 
     <c:forEach items="${comments}" var="comment">
-        <p align="left"> username:${comment.username}</p>
+        <c:forEach begin="1" end="${comment.star}">
+            <img src="/static/image/star.png" alt="test" width="25px" height="25px">
+        </c:forEach>
+        <p > username:${comment.username}</p>
         <textarea style="width:480px;height:70px">
         ${comment.content}
         </textarea>

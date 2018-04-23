@@ -155,7 +155,7 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
-    public void addComment(String userName, String content,int productId){
+    public void addComment(String userName, String content,int productId,int star){
 
         Session session = null;
         try {
@@ -164,8 +164,9 @@ public class ProductDaoImpl implements ProductDao {
             Comment comment = new Comment();
             comment.setUsername(userName);
             comment.setContent(content);
+            comment.setStar(star);
             Product product = (Product)session.get(Product.class,new Integer(productId));
-            System.out.println("yes"+product.getProductId());
+//            System.out.println("yes"+product.getProductId());
             product.getComments().add(comment);
             comment.setProduct(product);
             session.save(product);

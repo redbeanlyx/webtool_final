@@ -8,6 +8,8 @@ public class Comment {
     @Column(name = "comment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long commentId;
+    @Column(name = "star")
+    private int star;
     @Column(name = "username")
     private String username;
     @Column(name = "content")
@@ -49,4 +51,11 @@ public class Comment {
         this.product = product;
     }
 
+    public int getStar() {
+        return star;
+    }
+
+    public void setStar(int star) {
+        this.star = star;
+    }
 }

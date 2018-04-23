@@ -18,5 +18,5 @@ public interface ProductService {
     List<Product> searchProductByInput(String input);
     List<Product> searchAndOrderById(String input);
     List<Product> searchAndOrderByPrice(String input);
-    void addComment(String userName, String content, int productId);
+    void addComment(String userName, String content, int productId,int star);
 }

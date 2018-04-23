@@ -216,10 +216,12 @@ public class CartController extends GetUserName {
         }else{
             userName = super.getUserName();
         }
-System.out.println("empty?"+request.getParameter("productid"));
+
+        int star = Integer.parseInt(request.getParameter("star"));
+
        int id = Integer.parseInt(request.getParameter("productid"));
-System.out.print("integer?"+id);
-        productService.addComment(userName,content,id);
+
+        productService.addComment(userName,content,id,star);
 
 
         product = productService.getProduct(id);
