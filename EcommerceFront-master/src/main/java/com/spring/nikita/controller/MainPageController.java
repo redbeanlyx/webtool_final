@@ -102,8 +102,12 @@ public class MainPageController extends GetUserName {
 
 
     @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
-    public String addProductGet(@ModelAttribute Product product) {
-        return "addProduct";
+    public String addProductGet(@RequestParam("login") String login, @RequestParam("password") String pass,@ModelAttribute Product product) {
+
+        if(userService.isAdmin(login, pass)){
+            return "addProduct";
+        }
+        return "adminLogin";
     }
 //
 //
