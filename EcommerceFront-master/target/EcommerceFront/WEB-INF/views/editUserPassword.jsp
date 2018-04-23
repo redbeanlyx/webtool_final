@@ -17,7 +17,7 @@
         <table align="center">
             <tr>
                 <td>Your current password:</td>
-                <td><form:password class="edit_input" path="password"/></td>
+                <td><form:password class="edit_input"  path="password"/></td>
             </tr>
 
             <tr><td></td><td>&nbsp;<form:errors path="password"/></td></tr>

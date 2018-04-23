@@ -12,30 +12,31 @@
 <p><jsp:include page="header.jsp" /> </p>
 <div class="small_container">
 <form:form action="${pageContext.request.contextPath}/main/add" modelAttribute="product" method="post">
-        <table align="center">
+    <h2>Add New Product</h2>
+    <table align="center">
             <tr>
                 <td>Product category:</td>
-                <td><form:input path="productBrand" /></td>
+                <td><form:input class="edit_input" style="margin:5px" path="productBrand" /></td>
                 <td><form:errors path="productBrand" /></td>
             </tr>
             <tr>
                 <td>Product picture:</td>
-                <td><form:input path="productModel" /></td>
+                <td><form:input class="edit_input" style="margin:5px" path="productModel" /></td>
                 <td><form:errors path="productModel" /></td>
             </tr>
             <tr>
                 <td>Product stock:</td>
-                <td><form:input path="productStock" /></td>
+                <td><form:input class="edit_input" style="margin:5px" path="productStock" /></td>
                 <td><form:errors path="productStock" /></td>
             </tr>
             <tr>
                 <td>Product price:</td>
-                <td><form:input path="productMPN" /></td>
+                <td><form:input class="edit_input" style="margin:5px" path="productMPN" /></td>
                 <td><form:errors path="productMPN" /></td>
             </tr>
         </table>
         <br>
-        <input type="submit" value="Add" />
+        <input class="red_button" type="submit" value="Add" />
     </form:form>
 </div>
 <p><jsp:include page="footer.jsp" /></p>
