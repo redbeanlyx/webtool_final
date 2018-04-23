@@ -11,25 +11,31 @@
 <p><jsp:include page="header.jsp" /> </p>
 
 <div class="main_container" >
+    <div style="margin:0 auto;width:800px">
     <h3>Finalize Your Order</h3>
     <table align="center"border="0">
         <thead>
+
         <tr>
-            <th>Order line Id</th>
-            <th>Product id</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Stock</th>
-            <th>MPN</th>
-            <th>Bought quantity</th>
-            <th>Edit line</th>
-            <th>Delete line</th>
+
+            <th>Product id&nbsp;</th>
+            <th>Brand&nbsp;</th>
+            <th>Picture</th>
+            <th>Stock&nbsp;</th>
+            <th>Price&nbsp;</th>
+            <th>quantity&nbsp;</th>
+            <th>Edit line&nbsp;</th>
+            <th>Delete line&nbsp;</th>
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>&nbsp;</td>
+
+        </tr>
         <c:forEach items="${allLines}" var="line">
             <tr>
-                <td>${line.orderLineId}</td>
+
                 <td>${line.product.productId}</td>
                 <td>${line.product.productBrand}</td>
                 <td><img height="250px" width="250px" style="border-radius:25px" src="${line.product.productModel}"></td>
@@ -44,35 +50,20 @@
     </table>
     <h3 style="color: #ac2925">${moreThanStock}</h3>
     <h3 style="color: #ac2925">${nullValue}</h3>
-
-    total price: <p id="total" >${total}</p>
-<input type="text" id="promotion" /><input type="submit" value="submit" onclick="discount()" >
+<div style="text-align:right">
+    total price: <div id="total" style="display:inline-block" >${total}</div><br>
+promotion code:<input type="text" id="promotion" /><input type="submit" value="submit" style="border:indianred;border-color:indianred;color:indianred"onclick="discount()" >
     <p style="color:indianred" id="wrong"></p>
 
-    <form:form action="${pageContext.request.contextPath}/cart/finalize_order" commandName="orderLines" method="post">
-        <input class="red_button" type="submit" value="Finalize order">
-    </form:form>
 
+</div>
 
-<h3>Order History</h3>
-<table align="center" border="2">
-    <thead>
-    <tr>
-        <th>Order Final ID</th>
-        <th>Created Data</th>
-        <th>Show Lines</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${orderHistory}" var="ordHisLine">
-        <tr>
-            <td>${ordHisLine.orderFinal.orderId}</td>
-            <td>${ordHisLine.orderFinal.createdData}</td>
-            <td><a href="/cart/final/lines/${ordHisLine.orderFinal.orderId}">Show</a></td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        <form:form action="${pageContext.request.contextPath}/cart/finalize_order" commandName="orderLines" method="post">
+            <input class="red_button" type="submit" value="Finalize order">
+        </form:form>
+
+        <a href="/orderhistory" style="color:palevioletred">view my order history</a>
+    </div>
 </div>
 
 <p><jsp:include page="footer.jsp" /> </p>

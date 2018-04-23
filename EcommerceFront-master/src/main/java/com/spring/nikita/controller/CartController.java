@@ -38,7 +38,7 @@ public class CartController extends GetUserName {
         User user = userService.getUserByLogin(login);
 
         model.addAttribute("allLines", orderLinesService.getNotApprovedLineByUserId(user.getId()));
-        model.addAttribute("orderHistory", orderLinesService.getAllUserLineByRequiredUser(user));
+
         double sum =0;
         for(OrderLines line: orderLinesService.getNotApprovedLineByUserId(user.getId())){
             Product product = line.getProduct();
@@ -47,6 +47,16 @@ public class CartController extends GetUserName {
         }
         model.addAttribute("total",sum);
         return "cart";
+    }
+
+    @RequestMapping(value = "/orderhistory", method = RequestMethod.GET)
+    public String viewOrderHistory(Model model) throws SQLException {
+
+        String login = getPrincipal();
+
+        User user = userService.getUserByLogin(login);
+        model.addAttribute("orderHistory", orderLinesService.getAllUserLineByRequiredUser(user));
+        return "orderHistory";
     }
 
 
