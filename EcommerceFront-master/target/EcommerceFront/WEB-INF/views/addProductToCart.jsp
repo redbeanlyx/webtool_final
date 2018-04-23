@@ -59,20 +59,26 @@
     <div style="margin:0 auto;width:500px;text-align:left">
 <%--<c:if test="">--%>
     <form style="align:center;" action="/comment"  method="get">
-        1<input type="radio" name="star" value="1" >2<input type="radio" name="star" value="2">
-        3<input type="radio" name="star" value="3">4<input type="radio" name="star" value="4">5<input type="radio" name="star" value="5">
+        <fieldset>
+            <legend>write custom review:</legend>
+
+        1<input type="radio" name="star" value="1" onclick="showone(1)" >2<input type="radio" name="star" value="2" onclick="showone(2)" >
+        3<input type="radio" name="star" onclick="showone(3)" value="3">4<input type="radio" name="star" onclick="showone(4)" value="4">5<input onclick="showone(5)" type="radio" name="star" value="5">
         <br>
+            <div id="showmanystars"></div>
         <textarea type="text" style="width:500px;height:70px" name="newcomment"></textarea>
         <br>
         anonymous:<input type="checkbox" name="anonymous" value="yes">
-        <input type="submit" value="submit">
+        <input type="submit" style="border-color: indianred;color: indianred" value="submit">
         <input type="hidden" name ="productid" value="${product.productId}">
+
+        </fieldset>
     </form>
 <%--</c:if>--%>
 
     <c:forEach items="${comments}" var="comment">
 
-        username:${comment.username} <c:forEach begin="1" end="${comment.star}">
+        username:${comment.username} <br><c:forEach begin="1" end="${comment.star}">
         <img src="/static/image/star.png" alt="test" width="24px" height="24px">
     </c:forEach><br>
         <textarea readonly="readonly" style="color:dimgray;width:500px;height:70px">
@@ -82,6 +88,20 @@
     </c:forEach>
     </div>
 </div>
+
+<script>
+
+    function showone(num){
+
+       var s="";
+        for(var i=0; i<num; i++){
+            s +='<img src="/static/image/star.png" alt="test" width="24px" height="24px">';
+        }
+    document.getElementById("showmanystars").innerHTML=s;
+    }
+
+
+</script>
 <p><jsp:include page="footer.jsp" /> </p>
 </body>
 </html>
