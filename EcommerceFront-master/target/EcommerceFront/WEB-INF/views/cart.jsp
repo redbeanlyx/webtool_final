@@ -10,7 +10,7 @@
 <body>
 <p><jsp:include page="header.jsp" /> </p>
 
-<div class="main_container" >
+<div class="main_container" style="margin-bottom:200px" >
     <div style="margin:0 auto;width:800px">
     <h3>Finalize Your Order</h3>
     <table align="center"border="0">

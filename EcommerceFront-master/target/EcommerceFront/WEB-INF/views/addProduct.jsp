@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td>Product picture:</td>
-                <td><form:input class="edit_input" style="margin:5px" path="productModel" /></td>
+                <td><form:input class="edit_input" style="margin:5px" path="productModel" value="/static/image/1.jpg"/></td>
                 <td><form:errors path="productModel" /></td>
             </tr>
             <tr>
